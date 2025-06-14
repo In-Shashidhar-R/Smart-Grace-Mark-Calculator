@@ -1,0 +1,60 @@
+<div class="achievement-form">
+    <h2>Add Achievement</h2>
+    <form [formGroup]="achievementForm" (ngSubmit)="submitForm()">
+        <mat-form-field appearance="fill">
+            <mat-label>Type of Achievement</mat-label>
+            <mat-select formControlName="type" (selectionChange)="onTypeChange()">
+                <mat-option *ngFor="let type of achievementTypes" [value]="type">
+                    {{ type }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Organized By</mat-label>
+            <input matInput formControlName="organization" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Position</mat-label>
+            <mat-select formControlName="position">
+                <mat-option value="first">First</mat-option>
+                <mat-option value="second">Second</mat-option>
+                <mat-option value="third">Third</mat-option>
+                <mat-option value="participant">Participant</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Number of Participants / Team Members</mat-label>
+            <input matInput type="number" formControlName="participants" min="1" />
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Sharepoint Link</mat-label>
+            <input matInput formControlName="sharepoint" required>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="fill">
+            <mat-label>Event Date</mat-label>
+            <input matInput type="date" formControlName="eventDate" required>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+
+        <button mat-raised-button type="submit" [disabled]="!achievementForm.valid">
+        Submit Achievement
+      </button>
+    </form>
+</div>

@@ -1,0 +1,72 @@
+<div class="dashboard-container">
+    <div class="sidebar" [class.sidebar-open]="isSidebarOpen">
+        <!-- Burger Menu inside Sidebar -->
+        <button mat-icon-button (click)="toggleSidebar()" class="sidebar-toggle-btn">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <ul>
+            <li>
+                <a routerLink="/student-dashboard/sdashboard" (click)="closeSidebar()">
+                    <mat-icon>dashboard</mat-icon>
+                    <span *ngIf="isSidebarOpen">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/student-dashboard/studentprofile" (click)="closeSidebar()">
+                    <mat-icon>account_circle</mat-icon>
+                    <span *ngIf="isSidebarOpen">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/student-dashboard/Rules" (click)="closeSidebar()">
+                    <mat-icon>rules</mat-icon>
+                    <span *ngIf="isSidebarOpen">Rules</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/student-dashboard/addachievements" (click)="closeSidebar()">
+                    <mat-icon>add_circle</mat-icon>
+                    <span *ngIf="isSidebarOpen">Add Achievement</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/student-dashboard/viewprogress" (click)="closeSidebar()">
+                    <mat-icon>show_chart</mat-icon>
+                    <span *ngIf="isSidebarOpen">View Progress</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/student-dashboard/feedback-sforms" (click)="closeSidebar()">
+                    <mat-icon>feedback</mat-icon>
+                    <span *ngIf="isSidebarOpen">Feedback Forms</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/student-dashboard/fqa-students" (click)="closeSidebar()">
+                    <mat-icon>help</mat-icon>
+                    <span *ngIf="isSidebarOpen">FQA Section</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/login" (click)="closeSidebar()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span *ngIf="isSidebarOpen">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <mat-toolbar color="primary">
+            <span>{{ studentName ? studentName : 'Student Dashboard' }}</span>
+        </mat-toolbar>
+        <br>
+        <router-outlet></router-outlet>
+    </div>
+</div>

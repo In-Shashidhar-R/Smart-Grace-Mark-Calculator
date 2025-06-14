@@ -1,0 +1,169 @@
+/* Course selection section styling */
+
+.course-selection {
+    background-color: #f9f9f9;
+    width: 60%;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0 auto 30px auto;
+    transition: box-shadow 0.3s ease;
+}
+
+.course-selection:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Hover effect for box-shadow */
+}
+
+.course-selection h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+.course-selection label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+}
+
+.course-selection select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.course-selection select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+
+.course-selection button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.course-selection button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.course-selection button:active {
+    transform: scale(1);
+}
+
+
+/* Student list section styling */
+
+.student-list {
+    margin-top: 20px;
+}
+
+
+/* Mat card styling for student table */
+
+mat-card {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+mat-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Hover effect for card */
+}
+
+
+/* Styling for the mat-table */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+th.mat-header-cell {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+    color: #333;
+}
+
+td.mat-cell {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    color: #555;
+}
+
+mat-header-row,
+mat-row {
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+mat-row:hover {
+    background-color: #f1f1f1;
+    /* Adds hover effect on table rows */
+}
+
+
+/* Alternate row color for readability */
+
+mat-row:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+mat-row:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .course-selection {
+        width: 90%;
+        padding: 15px;
+    }
+    .course-selection select,
+    .course-selection button {
+        width: 100%;
+    }
+    /* Adjust table styling for mobile devices */
+    table {
+        font-size: 14px;
+    }
+    th.mat-header-cell,
+    td.mat-cell {
+        padding: 10px;
+    }
+    mat-card {
+        padding: 15px;
+    }
+}

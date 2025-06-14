@@ -1,0 +1,28 @@
+<div *ngIf="!isLoading">
+    <mat-card class="faculty-card">
+        <mat-card-header>
+            <mat-card-title>Courses handled by, {{ firstName }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>Courses: </p>
+            <ul>
+                <li *ngFor="let course of splitCourseNames()">
+                    {{ course }}
+                </li>
+            </ul>
+        </mat-card-content>
+    </mat-card>
+
+    <mat-card class="subjects-card">
+        <mat-card-header>
+            <mat-card-title>Subjects and Student Count</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div *ngFor="let subject of subjects">
+                <p>
+                    <strong>{{ subject.course_name }}</strong><br> Batch: {{ subject.batch }}<br> Department: {{ subject.department }}<br> Number of Students: {{ subject.student_count }}
+                </p>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

@@ -1,0 +1,88 @@
+<div class="dashboard-container">
+    <div class="sidebar" [class.sidebar-open]="isSidebarOpen">
+        <!-- Burger Menu inside Sidebar -->
+        <button mat-icon-button (click)="toggleSidebar()" class="sidebar-toggle-btn">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <ul>
+
+            <li>
+                <a routerLink="/admin-dashboard/adashboard" (click)="closeSidebar()">
+                    <mat-icon>dashboard</mat-icon>
+                    <span *ngIf="isSidebarOpen">Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/admin-dashboard/college-details" (click)="closeSidebar()">
+                    <mat-icon>school</mat-icon>
+                    <span *ngIf="isSidebarOpen">College Details</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/admin-dashboard/add-person" (click)="closeSidebar()">
+                    <mat-icon>person_add</mat-icon>
+                    <span *ngIf="isSidebarOpen">Add Student</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/admin-dashboard/add-faculty" (click)="closeSidebar()">
+                    <mat-icon>person_add_alt</mat-icon>
+                    <span *ngIf="isSidebarOpen">Add Faculty</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/admin-dashboard/add-class-advisor" (click)="closeSidebar()">
+                    <mat-icon>group_add</mat-icon>
+                    <span *ngIf="isSidebarOpen">Add Class Advisor</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/admin-dashboard/add-subjects-to-faculty" (click)="closeSidebar()">
+                    <mat-icon>library_add</mat-icon>
+                    <span *ngIf="isSidebarOpen">Add Subjects</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/admin-dashboard/add-subjects-to-students" (click)="closeSidebar()">
+                    <mat-icon>library_add</mat-icon>
+                    <span *ngIf="isSidebarOpen">Add Subjects to Students</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/admin-dashboard/activity-logs" (click)="closeSidebar()">
+                    <mat-icon>history</mat-icon>
+                    <span *ngIf="isSidebarOpen">Activity Logs</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/admin-dashboard/view-feedback" (click)="closeSidebar()">
+                    <mat-icon>feedback</mat-icon>
+                    <span *ngIf="isSidebarOpen">View Feedback</span>
+                </a>
+            </li>
+
+            <li>
+                <a routerLink="/login" (click)="closeSidebar()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span *ngIf="isSidebarOpen">LogOut</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <mat-toolbar color="primary">
+            <span>Admin Dashboard</span>
+        </mat-toolbar>
+        <br>
+        <router-outlet></router-outlet>
+    </div>
+</div>

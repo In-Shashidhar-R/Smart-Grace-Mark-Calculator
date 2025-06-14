@@ -1,0 +1,59 @@
+<div class="faculty-profile">
+    <mat-card *ngIf="faculty" class="profile-card">
+        <mat-card-header>
+            <mat-card-title>{{ faculty.first_name }} {{ faculty.last_name }}</mat-card-title>
+            <mat-card-subtitle>{{ faculty.major_subject }} | {{ faculty.degree }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+            <form *ngIf="editMode" (ngSubmit)="updateFaculty()">
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input [(ngModel)]="faculty.first_name" name="first_name" id="first_name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input [(ngModel)]="faculty.last_name" name="last_name" id="last_name" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input [(ngModel)]="faculty.phone_number" name="phone_number" id="phone_number" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input [(ngModel)]="faculty.email" name="email" id="email" type="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <input [(ngModel)]="faculty.gender" name="gender" id="gender" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input [(ngModel)]="faculty.dob" name="dob" id="dob" type="date" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea [(ngModel)]="faculty.address" name="address" id="address" rows="3" class="form-control"></textarea>
+                </div>
+                <p><strong>Major Subject:</strong> {{ faculty.major_subject }}</p>
+                <p><strong>Degree:</strong> {{ faculty.degree }}</p>
+                <p><strong>Username:</strong> {{ faculty.username }}</p>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+                </div>
+            </form>
+
+            <div *ngIf="!editMode">
+                <p><strong>Phone Number:</strong> {{ faculty.phone_number }}</p>
+                <p><strong>Email:</strong> {{ faculty.email }}</p>
+                <p><strong>Gender:</strong> {{ faculty.gender }}</p>
+                <p><strong>Date of Birth:</strong> {{ faculty.dob | date }}</p>
+                <p><strong>Address:</strong> {{ faculty.address }}</p>
+                <p><strong>Major Subject:</strong> {{ faculty.major_subject }}</p>
+                <p><strong>Degree:</strong> {{ faculty.degree }}</p>
+                <p><strong>Username:</strong> {{ faculty.username }}</p>
+                <button class="btn btn-edit" (click)="toggleEditMode()">Edit</button>
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

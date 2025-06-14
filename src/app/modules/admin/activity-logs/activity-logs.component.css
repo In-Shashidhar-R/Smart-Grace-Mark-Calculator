@@ -1,0 +1,86 @@
+/* Table container */
+
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+/* Header row */
+
+th.mat-header-cell {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Hover effect on header cells */
+
+th.mat-header-cell:hover {
+    background-color: #0056b3;
+}
+
+
+/* Table body row */
+
+td.mat-cell {
+    text-align: center;
+    padding: 16px;
+    font-size: 14px;
+    color: #555;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Hover effect on table cells */
+
+td.mat-cell:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Pagination buttons */
+
+.mat-paginator {
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+}
+
+
+/* Table animations */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive design for small screens */
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+    th.mat-header-cell,
+    td.mat-cell {
+        padding: 12px;
+    }
+}

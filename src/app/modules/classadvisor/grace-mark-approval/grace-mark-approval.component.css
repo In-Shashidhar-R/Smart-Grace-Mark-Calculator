@@ -1,0 +1,184 @@
+/* General styling for the progress container */
+
+.progress-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 30px auto;
+    transition: all 0.3s ease;
+}
+
+
+/* Hover effect for the progress container */
+
+.progress-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Heading style for the container */
+
+h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+
+/* Table styling */
+
+table {
+    table-layout: fixed;
+    width: 100%;
+}
+
+th,
+td {
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+
+/* Styling for header cells */
+
+mat-header-cell {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    padding: 12px;
+    color: #444;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+
+/* Styling for table cells */
+
+mat-cell {
+    text-align: center;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #555;
+}
+
+
+/* Row hover effect */
+
+tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transform: scale(1.02);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+/* Button Styles */
+
+.styled-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #00796b;
+    /* Primary color */
+    color: white;
+    border-radius: 25px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.3s ease-in-out;
+}
+
+.styled-button:hover {
+    background-color: #004d40;
+    /* Darker shade on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.styled-button:active {
+    background-color: #00332e;
+    /* Darkest shade on click */
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Focus effect for accessibility */
+
+.styled-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5);
+    /* Light blue outline */
+}
+
+
+/* Disabled Button */
+
+.styled-button:disabled {
+    background-color: #b2dfdb;
+    /* Light grey color for disabled state */
+    color: #80cbc4;
+    /* Light grey text */
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+
+/* Styling for table footer rows */
+
+tr.mat-header-row {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* Styling for feedback and status columns */
+
+mat-cell.status {
+    font-weight: bold;
+    color: #28a745;
+    /* Green for success status */
+}
+
+mat-cell.status.pending {
+    color: #ffc107;
+    /* Yellow for pending status */
+}
+
+mat-cell.status.failed {
+    color: #dc3545;
+    /* Red for failed status */
+}
+
+
+/* Additional styling for date columns */
+
+mat-cell.date {
+    font-style: italic;
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .progress-container {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+    table {
+        font-size: 12px;
+    }
+    mat-header-cell,
+    mat-cell {
+        padding: 8px;
+    }
+}

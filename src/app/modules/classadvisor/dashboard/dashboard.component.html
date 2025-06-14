@@ -1,0 +1,48 @@
+<div class="dashboard">
+    <mat-card class="animated-card">
+        <h2>Class Advisor Dashboard</h2>
+        <div *ngIf="isLoading" class="loading">Loading...</div>
+
+        <div *ngIf="!isLoading">
+            <!-- First Card: Student Information -->
+            <mat-card class="group-card">
+                <div class="group-content">
+                    <mat-card class="stat-card total-students">
+                        <mat-icon>group</mat-icon>
+                        <p>Total Students</p>
+                        <h3>{{ totalStudents }}</h3>
+                    </mat-card>
+
+                    <mat-card class="stat-card submitted-achievements">
+                        <mat-icon>assignment_turned_in</mat-icon>
+                        <p>Students Submitted Achievements</p>
+                        <h3>{{ studentsWithAchievements }}</h3>
+                    </mat-card>
+                </div>
+            </mat-card>
+
+            <!-- Second Card: Achievement Status -->
+            <mat-card class="group-card">
+                <div class="group-content">
+                    <mat-card class="stat-card pending">
+                        <mat-icon>hourglass_empty</mat-icon>
+                        <p>Pending Achievements</p>
+                        <h3>{{ achievementsCount.pending }}</h3>
+                    </mat-card>
+
+                    <mat-card class="stat-card approved">
+                        <mat-icon>check_circle</mat-icon>
+                        <p>Approved Achievements</p>
+                        <h3>{{ achievementsCount.approved }}</h3>
+                    </mat-card>
+
+                    <mat-card class="stat-card rejected">
+                        <mat-icon>cancel</mat-icon>
+                        <p>Rejected Achievements</p>
+                        <h3>{{ achievementsCount.rejected }}</h3>
+                    </mat-card>
+                </div>
+            </mat-card>
+        </div>
+    </mat-card>
+</div>

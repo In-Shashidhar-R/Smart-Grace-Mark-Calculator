@@ -1,0 +1,180 @@
+/* Style for mat-card containers */
+
+mat-card {
+    margin: 20px auto;
+    /* Center the card */
+    max-width: 1200px;
+    /* Set a max-width */
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    /* White background for the card */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+    /* Smooth shadow effect */
+}
+
+
+/* Hover effect for the mat-card */
+
+mat-card:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Styling for mat-form-field (inputs) */
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-out;
+}
+
+
+/* Hover and focus effects for form fields */
+
+mat-form-field:hover {
+    transform: translateY(-2px);
+    /* Slightly lift the form field on hover */
+}
+
+
+/* Styling for select inputs (dropdowns) */
+
+mat-select {
+    transition: background-color 0.3s ease-out;
+}
+
+
+/* Label styling */
+
+mat-label {
+    font-weight: 500;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease-in-out;
+}
+
+
+/* Focus effect on mat-select */
+
+mat-form-field.mat-focused mat-label {
+    color: #4CAF50;
+    /* Green color on focus */
+}
+
+
+/* Styling for the Save button */
+
+button.mat-raised-button {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease-out, transform 0.2s ease-out;
+    width: 100%;
+}
+
+
+/* Hover effect on button */
+
+button.mat-raised-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+
+/* Click effect on button */
+
+button.mat-raised-button:active {
+    transform: scale(0.98);
+}
+
+
+/* Styling for the Faculty-Course Assignments table */
+
+mat-card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+/* Table styling */
+
+table.mat-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Table headers styling */
+
+th.mat-header-cell {
+    background-color: #f1f1f1;
+    font-weight: bold;
+    padding: 12px;
+    text-align: left;
+}
+
+
+/* Table data cell styling */
+
+td.mat-cell {
+    padding: 12px;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+
+/* Row hover effect */
+
+tr.mat-row:hover {
+    background-color: #f9f9f9;
+}
+
+
+/* Actions column buttons styling */
+
+button.mat-icon-button {
+    color: #ff6f61;
+    /* Red color for delete icon */
+    transition: transform 0.2s ease-out;
+}
+
+
+/* Delete button hover effect */
+
+button.mat-icon-button:hover {
+    transform: scale(1.1);
+    color: #d32f2f;
+    /* Darker red on hover */
+}
+
+
+/* Small padding for the table */
+
+mat-table {
+    margin-bottom: 20px;
+}
+
+
+/* Responsive design for smaller screens */
+
+@media (max-width: 768px) {
+    mat-card {
+        margin: 10px;
+        padding: 15px;
+    }
+    /* Make the Save button full-width on smaller screens */
+    button.mat-raised-button {
+        width: 100%;
+    }
+    table.mat-table {
+        font-size: 14px;
+        /* Reduce font size for small screens */
+    }
+}

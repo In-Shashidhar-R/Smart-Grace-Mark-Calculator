@@ -1,0 +1,47 @@
+<div class="student-dashboard">
+    <mat-card class="dashboard-card">
+        <h2>Student Dashboard</h2>
+
+        <div *ngIf="isLoading" class="loading">Loading...</div>
+
+        <div *ngIf="!isLoading">
+            <div class="summary-cards">
+                <!-- Submitted Achievements -->
+                <mat-card class="stat-card submitted">
+                    <mat-icon>assignment</mat-icon>
+                    <p>Submitted Achievements</p>
+                    <h3>{{ achievementsCount.submitted }}</h3>
+                </mat-card>
+
+                <!-- Approved Achievements -->
+                <mat-card class="stat-card approved">
+                    <mat-icon>check_circle</mat-icon>
+                    <p>Approved Achievements</p>
+                    <h3>{{ achievementsCount.approved }}</h3>
+                </mat-card>
+
+                <!-- Rejected Achievements -->
+                <mat-card class="stat-card rejected">
+                    <mat-icon>cancel</mat-icon>
+                    <p>Rejected Achievements</p>
+                    <h3>{{ achievementsCount.rejected }}</h3>
+                </mat-card>
+
+                <!-- Pending Achievements -->
+                <mat-card class="stat-card pending">
+                    <mat-icon>hourglass_empty</mat-icon>
+                    <p>Pending Achievements</p>
+                    <h3>{{ achievementsCount.pending || 0 }}</h3>
+                </mat-card>
+            </div>
+
+            <div class="grace-marks">
+                <mat-card class="stat-card grace">
+                    <mat-icon>emoji_events</mat-icon>
+                    <p>Grace Marks</p>
+                    <h3>{{ graceMarks }}</h3>
+                </mat-card>
+            </div>
+        </div>
+    </mat-card>
+</div>

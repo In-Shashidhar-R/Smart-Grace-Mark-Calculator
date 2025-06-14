@@ -1,0 +1,76 @@
+<!-- Main Layout -->
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar" [class.sidebar-open]="isSidebarOpen">
+        <!-- Burger Menu inside Sidebar -->
+        <button mat-icon-button (click)="toggleSidebar()" class="sidebar-toggle-btn">
+            <mat-icon>menu</mat-icon>
+        </button>
+
+        <ul>
+            <li>
+                <a routerLink="/class-advisor/cdashboard" (click)="closeSidebar()">
+                    <mat-icon>dashboard</mat-icon>
+                    <span *ngIf="isSidebarOpen">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/class-advisor/advisor-profile" (click)="closeSidebar()">
+                    <mat-icon>person</mat-icon>
+                    <span *ngIf="isSidebarOpen">Profile</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/class-advisor/ads-rules" (click)="closeSidebar()">
+                    <mat-icon>rules</mat-icon>
+                    <span *ngIf="isSidebarOpen">Grace Mark Rules</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/class-advisor/gracemarkapproval" (click)="closeSidebar()">
+                    <mat-icon>check_circle</mat-icon>
+                    <span *ngIf="isSidebarOpen">Grace Mark Approval</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/class-advisor/marks-report" (click)="closeSidebar()">
+                    <mat-icon>edit</mat-icon>
+                    <span *ngIf="isSidebarOpen">Grace Mark Updation</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/class-advisor/grace-mark-report" (click)="closeSidebar()">
+                    <mat-icon>assessment</mat-icon>
+                    <span *ngIf="isSidebarOpen">Marks Report</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/class-advisor/feedback-cforms" (click)="closeSidebar()">
+                    <mat-icon>feedback</mat-icon>
+                    <span *ngIf="isSidebarOpen">Feedback Forms</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/class-advisor/fqa-classadvisor" (click)="closeSidebar()">
+                    <mat-icon>help</mat-icon>
+                    <span *ngIf="isSidebarOpen">FQAs Section</span>
+                </a>
+            </li>
+            <li>
+                <a routerLink="/login" (click)="closeSidebar()">
+                    <mat-icon>exit_to_app</mat-icon>
+                    <span *ngIf="isSidebarOpen">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <mat-toolbar color="primary">
+            <span>{{ studentName ? studentName : 'Class Advisor Dashboard' }}</span>
+        </mat-toolbar>
+        <br>
+        <router-outlet></router-outlet>
+    </div>
+</div>

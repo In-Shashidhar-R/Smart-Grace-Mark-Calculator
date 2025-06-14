@@ -1,0 +1,133 @@
+<mat-card class="form-container">
+    <p><strong>Add Student Details</strong></p>
+    <form class="grid-container">
+
+        <mat-form-field class="full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="person.firstName" name="firstName" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="person.lastName" name="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Phone Number</mat-label>
+            <input matInput type="tel" [(ngModel)]="person.phoneNumber" name="phoneNumber" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="person.email" name="email" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>ABC ID</mat-label>
+            <input matInput [(ngModel)]="person.abcId" name="abcId" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Aadhaar Number</mat-label>
+            <input matInput [(ngModel)]="person.aadhaarNumber" name="aadhaarNumber">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Gender</mat-label>
+            <mat-select [(ngModel)]="person.gender" name="gender" required>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Register Number</mat-label>
+            <input matInput [(ngModel)]="person.registerNumber" name="registerNumber" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput type="date" [(ngModel)]="person.dob" name="dob" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Branch</mat-label>
+            <mat-select [(ngModel)]="person.branch" name="branch" required>
+                <mat-option value="AIE">AIE</mat-option>
+                <mat-option value="CSE - A">CSE - A</mat-option>
+                <mat-option value="CSE - B">CSE - B</mat-option>
+                <mat-option value="CYS">CYS</mat-option>
+                <mat-option value="CCE">CCE</mat-option>
+                <mat-option value="ECE">ECE</mat-option>
+                <mat-option value="MECH">MECH</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Batch</mat-label>
+            <mat-select [(ngModel)]="person.batch" name="batch" required>
+                <mat-option value="2020-2024">2020 - 2024</mat-option>
+                <mat-option value="2021-2025">2021 - 2025</mat-option>
+                <mat-option value="2022-2026">2022 - 2026</mat-option>
+                <mat-option value="2023-2027">2023 - 2027</mat-option>
+                <mat-option value="2024-2028">2024 - 2028</mat-option>
+                <mat-option value="2025-2029">2025 - 2029</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Address</mat-label>
+            <input matInput [(ngModel)]="person.address" name="address" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Father Name</mat-label>
+            <input matInput [(ngModel)]="person.fatherName" name="fatherName" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Father Contact Number</mat-label>
+            <input matInput [(ngModel)]="person.fatherContact" name="fatherContact" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Mother Name</mat-label>
+            <input matInput [(ngModel)]="person.motherName" name="motherName" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Mother Contact Number</mat-label>
+            <input matInput [(ngModel)]="person.motherContact" name="motherContact" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Guardian Name</mat-label>
+            <input matInput [(ngModel)]="person.guardianName" name="guardianName" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Guardian Contact Number</mat-label>
+            <input matInput [(ngModel)]="person.guardianContact" name="guardianContact" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Resident</mat-label>
+            <mat-select [(ngModel)]="person.resident" name="resident" required>
+                <mat-option value="hosteller">Hosteller</mat-option>
+                <mat-option value="Day Scholar">Day Scholar</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="person.username" name="username" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" [(ngModel)]="person.password" name="password" required>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" class="full-width submit-button" (click)="addPerson()">Submit</button>
+</mat-card>

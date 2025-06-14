@@ -1,0 +1,38 @@
+<div class="background-overlay"></div>
+<div class="container">
+    <!-- Welcome Text -->
+    <div class="welcome-container">
+        <h1 class="welcome-text">Smart Grace Mark Calculator</h1>
+    </div>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <mat-card class="login-card">
+            <h2>Login</h2>
+            <br>
+            <form (submit)="onLogin($event)">
+                <!-- Username Input -->
+                <div class="input-container">
+                    <input type="email" id="username" [(ngModel)]="username" placeholder=" " name="email" required>
+                    <label for="username">Username</label>
+                </div>
+
+                <!-- Password Input -->
+                <div class="input-container">
+                    <input [type]="passwordVisible ? 'text' : 'password'" id="password" [(ngModel)]="password" placeholder=" " name="password" required>
+                    <label for="password">Password</label>
+                    <button mat-icon-button type="button" (click)="togglePasswordVisibility()" class="toggle-btn">
+                        <mat-icon>{{ passwordVisible ? 'visibility' : 'visibility_off' }}</mat-icon>
+                    </button>
+                </div>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+
+            <a routerLink="/forget-password" class="forgot-password">Forgot Password?</a>
+        </mat-card>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

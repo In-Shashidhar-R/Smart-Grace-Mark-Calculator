@@ -1,0 +1,107 @@
+/* General styling for the form container */
+
+.achievement-form {
+    background-color: #fff;
+    width: 80%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+
+/* Hover effect for form container */
+
+.achievement-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Styling for the form heading */
+
+.achievement-form h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+/* Styling for mat-form-field */
+
+mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+
+/* Styling for input fields */
+
+mat-form-field mat-label {
+    font-weight: bold;
+    color: #555;
+}
+
+
+/* Styling for mat-select */
+
+mat-select {
+    font-size: 16px;
+}
+
+
+/* Hover effect for form fields */
+
+mat-form-field:hover {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.4);
+}
+
+
+/* Styling for the submit button */
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 20px;
+}
+
+
+/* Button hover effect */
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+
+/* Disabled button */
+
+button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+
+/* Responsive Design */
+
+@media screen and (max-width: 768px) {
+    .achievement-form {
+        width: 90%;
+        padding: 20px;
+    }
+    button[type="submit"] {
+        padding: 10px;
+    }
+}

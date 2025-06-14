@@ -1,0 +1,26 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!-- Username Column -->
+    <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> Username </th>
+        <td mat-cell *matCellDef="let log"> {{ log.username }} </td>
+    </ng-container>
+
+    <!-- Role Column -->
+    <ng-container matColumnDef="role">
+        <th mat-header-cell *matHeaderCellDef> Role </th>
+        <td mat-cell *matCellDef="let log"> {{ log.role }} </td>
+    </ng-container>
+
+    <!-- Login Time Column -->
+    <ng-container matColumnDef="login_time">
+        <th mat-header-cell *matHeaderCellDef> Login Time </th>
+        <td mat-cell *matCellDef="let log"> {{ log.login_time | date: 'yyyy-MM-dd HH:mm:ss' }} </td>
+    </ng-container>
+
+
+    <!-- Table Header & Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

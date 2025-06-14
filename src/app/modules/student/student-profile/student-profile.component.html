@@ -1,0 +1,188 @@
+<mat-card *ngIf="user" class="profile-card">
+    <mat-card-header class="profile-header">
+        <mat-card-title class="profile-title">Student Profile</mat-card-title>
+
+    </mat-card-header>
+
+    <mat-card-content>
+        <form *ngIf="editMode" (ngSubmit)="updateUser()">
+            <div class="profile-details">
+                <div class="profile-row">
+                    <div><strong>ID:</strong></div>
+                    <div>{{ user.id }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>First Name:</strong></div>
+                    <input type="text" [(ngModel)]="user.first_name" name="first_name" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Last Name:</strong></div>
+                    <input type="text" [(ngModel)]="user.last_name" name="last_name" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Email:</strong></div>
+                    <input type="email" [(ngModel)]="user.email" name="email" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Phone:</strong></div>
+                    <input type="text" [(ngModel)]="user.phone_number" name="phone_number" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Gender:</strong></div>
+                    <input type="text" [(ngModel)]="user.gender" name="gender" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Register Number:</strong></div>
+                    <input type="text" [(ngModel)]="user.register_number" name="register_number" [readonly]="!editMode" />
+                </div>
+
+                <div class="profile-row" *ngIf="editMode">
+                    <div><strong>DOB:</strong></div>
+                    <input type="date" [(ngModel)]="user.dob" name="dob" [readonly]="!editMode" />
+                </div>
+
+                <div class="profile-row">
+                    <div><strong>Batch:</strong></div>
+                    <input type="text" [(ngModel)]="user.batch" name="batch" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Branch:</strong></div>
+                    <input type="text" [(ngModel)]="user.branch" name="branch" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Address:</strong></div>
+                    <input type="text" [(ngModel)]="user.address" name="address" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Father's Name:</strong></div>
+                    <input type="text" [(ngModel)]="user.father_name" name="father_name" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Father's Contact:</strong></div>
+                    <input type="text" [(ngModel)]="user.father_contact" name="father_contact" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Mother's Name:</strong></div>
+                    <input type="text" [(ngModel)]="user.mother_name" name="mother_name" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Mother's Contact:</strong></div>
+                    <input type="text" [(ngModel)]="user.mother_contact" name="mother_contact" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Guardian's Name:</strong></div>
+                    <input type="text" [(ngModel)]="user.guardian_name" name="guardian_name" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Guardian's Contact:</strong></div>
+                    <input type="text" [(ngModel)]="user.guardian_contact" name="guardian_contact" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Resident:</strong></div>
+                    <input type="text" [(ngModel)]="user.resident" name="resident" [readonly]="!editMode" />
+                </div>
+                <div class="profile-row">
+                    <div><strong>Username:</strong></div>
+                    <div>{{ user.username }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Password:</strong></div>
+                    <input type="password" [(ngModel)]="user.password" name="password" [readonly]="!editMode" />
+                </div>
+            </div>
+            <button mat-button type="submit" class="save-btn" [disabled]="!editMode">Save Changes</button>&nbsp;
+            <button mat-button type="button" class="cancel-btn" (click)="cancelEdit()">Cancel</button>
+        </form>
+        <div *ngIf="!editMode">
+            <div class="profile-details">
+                <div class="profile-row">
+                    <div><strong>ID:</strong></div>
+                    <div>{{ user.id }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>First Name:</strong></div>
+                    <div>{{ user.first_name }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Last Name:</strong></div>
+                    <div>{{ user.last_name }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Email:</strong></div>
+                    <div>{{ user.email }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Phone:</strong></div>
+                    <div>{{ user.phone_number }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Gender:</strong></div>
+                    <div>{{ user.gender }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Register Number:</strong></div>
+                    <div>{{ user.register_number }}</div>
+                </div>
+                <div class="profile-row" *ngIf="!editMode">
+                    <div><strong>DOB:</strong></div>
+                    <div>{{ user.dob | date:'dd/MM/yyyy' }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Batch:</strong></div>
+                    <div>{{ user.batch }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Branch:</strong></div>
+                    <div>{{ user.branch }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Address:</strong></div>
+                    <div>{{ user.address }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Father's Name:</strong></div>
+                    <div>{{ user.father_name }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Father's Contact:</strong></div>
+                    <div>{{ user.father_contact }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Mother's Name:</strong></div>
+                    <div>{{ user.mother_name }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Mother's Contact:</strong></div>
+                    <div>{{ user.mother_contact }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Guardian's Name:</strong></div>
+                    <div>{{ user.guardian_name }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Guardian's Contact:</strong></div>
+                    <div>{{ user.guardian_contact }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Resident:</strong></div>
+                    <div>{{ user.resident }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Username:</strong></div>
+                    <div>{{ user.username }}</div>
+                </div>
+                <div class="profile-row">
+                    <div><strong>Password:</strong></div>
+                    <div>{{ user.password }}</div>
+                </div>
+            </div>
+            <button mat-button (click)="toggleEditMode()" class="edit-btn">{{ editMode ? 'Cancel' : 'Edit' }}</button>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="!user" class="loading-card">
+    <mat-card-content>
+        <p>Loading...</p>
+    </mat-card-content>
+</mat-card>

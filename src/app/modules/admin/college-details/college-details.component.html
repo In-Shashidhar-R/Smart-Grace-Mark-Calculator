@@ -1,0 +1,285 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>User Details</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <!-- Select Type -->
+        <div class="form-group">
+            <label for="type"><br>Select Type</label>
+            <select id="type" [(ngModel)]="selectedTypeValue" (change)="onTypeSelected()" class="form-control">
+                <option value="" disabled>Select Type</option>
+                <option *ngFor="let type of types" [value]="type">{{ type }}</option>
+            </select>
+        </div>
+
+        <!-- Select Username with Search Feature -->
+        <div *ngIf="usernames && usernames.length > 0">
+            <div class="form-group">
+                <label for="username">Select Username</label>
+                <select id="username" [(ngModel)]="selectedUsernameValue" (change)="onUsernameSelected()" class="form-control">
+                    <option value="" disabled>Select Username</option>
+                    <option *ngFor="let username of usernames" [value]="username">{{ username }}</option>
+                </select>
+            </div>
+        </div>
+
+        <mat-card *ngIf="selectedTypeValue === 'Faculty'">
+            <mat-card-header>
+                <mat-card-title>Faculty Details</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <div class="form-group">
+                    <label for="first_name"><br>Id</label>
+                    <input id="first_name" matInput [(ngModel)]="userDetails.id" [disabled]="!isEditing" class="form-control" />
+                </div>
+                <!-- Faculty Information -->
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input id="first_name" matInput [(ngModel)]="userDetails.first_name" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input id="last_name" matInput [(ngModel)]="userDetails.last_name" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input id="phone_number" matInput [(ngModel)]="userDetails.phone_number" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input id="dob" matInput [(ngModel)]="userDetails.dob" [disabled]="!isEditing" [value]="userDetails.dob | date: 'yyyy-MM-dd'" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" matInput [(ngModel)]="userDetails.email" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="major_subject">Major Subject</label>
+                    <input id="major_subject" matInput [(ngModel)]="userDetails.major_subject" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="degree">Degree</label>
+                    <input id="degree" matInput [(ngModel)]="userDetails.degree" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <!-- Username and Password -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" matInput [(ngModel)]="userDetails.username" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" matInput [(ngModel)]="userDetails.password" [disabled]="!isEditing || isEditing" class="form-control" />
+                </div>
+                <div class="form-buttons">
+                    <button class="btn btn-primary" (click)="toggleEdit()" type="button">
+                        {{ isEditing ? 'Cancel' : 'Edit' }}
+                    </button>
+                    <button class="btn btn-success" (click)="saveChanges()" *ngIf="isEditing" type="button">
+                        Save
+                    </button>
+                    <button class="btn btn-danger" (click)="deleteUser()" type="button">
+                        Delete
+                    </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+
+        <mat-card *ngIf="selectedTypeValue === 'Student'">
+            <mat-card-header>
+                <mat-card-title>Student Details</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="form-group">
+                    <label for="first_name"><br>Id</label>
+                    <input id="first_name" matInput [(ngModel)]="userDetails.id" [disabled]="!isEditing" class="form-control" />
+                </div>
+                <!-- Student Information -->
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input id="first_name" matInput [(ngModel)]="userDetails.first_name" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input id="last_name" matInput [(ngModel)]="userDetails.last_name" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input id="phone_number" matInput [(ngModel)]="userDetails.phone_number" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" matInput [(ngModel)]="userDetails.email" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="abc_id">ABC ID</label>
+                    <input id="abc_id" matInput [(ngModel)]="userDetails.abc_id" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="aadhaar_number">Aadhaar Number</label>
+                    <input id="aadhaar_number" matInput [(ngModel)]="userDetails.aadhaar_number" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="register_number">Register Number</label>
+                    <input id="register_number" matInput [(ngModel)]="userDetails.register_number" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input id="dob" matInput [(ngModel)]="userDetails.dob" [disabled]="!isEditing" [value]="userDetails.dob | date: 'yyyy-MM-dd'" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" matInput [(ngModel)]="userDetails.address" [disabled]="!isEditing" class="form-control address-textarea"></textarea>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="father_name">Father Name</label>
+                    <input id="father_name" matInput [(ngModel)]="userDetails.father_name" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="father_contact">Father Contact</label>
+                    <input id="father_contact" matInput [(ngModel)]="userDetails.father_contact" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="mother_name">Mother Name</label>
+                    <input id="mother_name" matInput [(ngModel)]="userDetails.mother_name" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="mother_contact">Mother Contact</label>
+                    <input id="mother_contact" matInput [(ngModel)]="userDetails.mother_contact" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="guardian_name">Guardian Name</label>
+                    <input id="guardian_name" matInput [(ngModel)]="userDetails.guardian_name" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="guardian_contact">Guardian Contact</label>
+                    <input id="guardian_contact" matInput [(ngModel)]="userDetails.guardian_contact" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="resident">Resident</label>
+                    <input id="resident" matInput [(ngModel)]="userDetails.resident" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <!-- Username and Password -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" matInput [(ngModel)]="userDetails.username" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" matInput [(ngModel)]="userDetails.password" [disabled]="!isEditing || isEditing" class="form-control" />
+                </div>
+                <div class="form-buttons">
+                    <button class="btn btn-primary" (click)="toggleEdit()" type="button">
+                        {{ isEditing ? 'Cancel' : 'Edit' }}
+                    </button>
+                    <button class="btn btn-success" (click)="saveChanges()" *ngIf="isEditing" type="button">
+                        Save
+                    </button>
+                    <button class="btn btn-danger" (click)="deleteUser()" type="button">
+                        Delete
+                    </button>
+                </div>
+            </mat-card-content>
+        </mat-card>
+
+        <mat-card *ngIf="selectedTypeValue === 'Class Advisor'">
+            <mat-card-header>
+                <mat-card-title>Class Advisor Details</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+
+                <div class="form-group">
+                    <label for="first_name"><br>Id</label>
+                    <input id="first_name" matInput [(ngModel)]="userDetails.id" [disabled]="!isEditing" class="form-control" />
+                </div>
+                <!-- Class Advisor Information -->
+                <div class="form-group">
+                    <label for="first_name">First Name</label>
+                    <input id="first_name" matInput [(ngModel)]="userDetails.first_name" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Last Name</label>
+                    <input id="last_name" matInput [(ngModel)]="userDetails.last_name" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="phone_number">Phone Number</label>
+                    <input id="phone_number" matInput [(ngModel)]="userDetails.phone_number" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="dob">Date of Birth</label>
+                    <input id="dob" matInput [(ngModel)]="userDetails.dob" [disabled]="!isEditing" [value]="userDetails.dob | date: 'yyyy-MM-dd'" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input id="email" matInput [(ngModel)]="userDetails.email" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="major_subject">Major Subject</label>
+                    <input id="major_subject" matInput [(ngModel)]="userDetails.major_subject" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="degree">Degree</label>
+                    <input id="degree" matInput [(ngModel)]="userDetails.degree" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="batch">Batch</label>
+                    <input id="batch" matInput [(ngModel)]="userDetails.batch" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <!-- Username and Password -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input id="username" matInput [(ngModel)]="userDetails.username" [disabled]="!isEditing" class="form-control" />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" matInput [(ngModel)]="userDetails.password" [disabled]="!isEditing || isEditing" class="form-control" />
+                </div>
+                <div class="form-buttons">
+                    <button class="btn btn-primary" (click)="toggleEdit()" type="button">
+                        {{ isEditing ? 'Cancel' : 'Edit' }}
+                    </button>
+                    <button class="btn btn-success" (click)="saveChanges()" *ngIf="isEditing" type="button">
+                        Save
+                    </button>
+                    <button class="btn btn-danger" (click)="deleteUser()" type="button">
+                        Delete
+                    </button>
+                </div>
+            </mat-card-content>
+        </mat-card>

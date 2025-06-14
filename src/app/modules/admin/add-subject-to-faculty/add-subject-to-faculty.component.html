@@ -1,0 +1,53 @@
+<mat-card>
+    <mat-form-field appearance="outline">
+        <mat-label>Select Faculty</mat-label>
+        <mat-select [(ngModel)]="selectedFaculty">
+            <mat-option *ngFor="let faculty of facultyNames" [value]="faculty">
+                {{ faculty }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>Select Courses</mat-label>
+        <mat-select [(ngModel)]="selectedCourses" multiple>
+            <mat-option *ngFor="let course of CourseNames" [value]="course">
+                {{ course }}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="saveFacultyCourses()">Save</button>
+</mat-card>
+
+<!-- Faculty-Course Assignments Table -->
+<mat-card>
+    <h2>Faculty-Course Assignments</h2>
+    <table mat-table [dataSource]="facultyCourses" class="mat-elevation-z8">
+        <ng-container matColumnDef="faculty">
+            <th mat-header-cell *matHeaderCellDef> Faculty </th>
+            <td mat-cell *matCellDef="let row"> {{ row.faculty_name }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="courses">
+            <th mat-header-cell *matHeaderCellDef> Courses </th>
+            <td mat-cell *matCellDef="let row">
+                <div *ngFor="let course of row.course_name.split(',') ; let i = index">
+                    <span>{{i + 1}}. {{course.trim()}}</span>
+                </div>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let row">
+                <button mat-icon-button color="warn" (click)="deleteFacultyCourse(row.faculty_name, row.course_name)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="['faculty', 'courses', 'actions']"></tr>
+        <tr mat-row *matRowDef="let row; columns: ['faculty', 'courses', 'actions'];"></tr>
+    </table>
+</mat-card>

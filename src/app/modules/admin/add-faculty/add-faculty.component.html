@@ -1,0 +1,65 @@
+<mat-card class="form-container">
+    <p><strong>Add Faculty Details</strong></p>
+    <form class="grid-container">
+
+        <mat-form-field class="full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="faculty.firstName" name="firstName" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="faculty.lastName" name="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Phone Number</mat-label>
+            <input matInput type="tel" [(ngModel)]="faculty.phoneNumber" name="phoneNumber" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="faculty.email" name="email" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Gender</mat-label>
+            <mat-select [(ngModel)]="faculty.gender" name="gender" required>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput type="date" [(ngModel)]="faculty.dob" name="dob" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Address</mat-label>
+            <input matInput [(ngModel)]="faculty.address" name="address" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Major Subject</mat-label>
+            <input matInput [(ngModel)]="faculty.majorsubject" name="majorsubject" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Highest Degree</mat-label>
+            <input matInput [(ngModel)]="faculty.degree" name="degree" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="faculty.username" name="username" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" [(ngModel)]="faculty.password" name="password" required>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" class="full-width submit-button" (click)="addfaculty()">Submit</button>
+</mat-card>

@@ -1,0 +1,143 @@
+/* General Styling for Admin Dashboard */
+
+.admin-card {
+    margin: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+mat-card-header {
+    background-color: #3f51b5;
+    color: white;
+    font-weight: bold;
+}
+
+mat-card-title {
+    font-size: 1.5rem;
+    /* Increased font size for better readability */
+}
+
+mat-card-content {
+    padding: 20px;
+    font-size: 16px;
+    line-height: 1.6;
+    /* Improved readability */
+}
+
+
+/* Styling for Card Details Section */
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Spacing between cards */
+    margin-bottom: 30px;
+}
+
+
+/* Styling for Individual Info Cards */
+
+.info-card {
+    width: 30%;
+    min-width: 280px;
+    /* Ensures good responsiveness */
+    margin-bottom: 20px;
+    background-color: #e3f2fd;
+    text-align: center;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.info-card:hover {
+    transform: translateY(-10px);
+}
+
+.info-card h2 {
+    font-size: 2.5rem;
+    /* Bigger font size for the numbers */
+    color: #3f51b5;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+
+/* Styling for Other Details Section */
+
+.other-details-card {
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* Styling for Deadline Card */
+
+.deadline-card {
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Loading Text Styling */
+
+.loading {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+    color: #3f51b5;
+    font-weight: bold;
+}
+
+
+/* Responsive Design */
+
+.dashboard-container {
+    padding: 20px;
+    background-color: #f4f7fa;
+}
+
+mat-card {
+    margin: 20px 0;
+}
+
+
+/* Improved Responsive Design */
+
+@media (max-width: 768px) {
+    .info-card {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    mat-card-header {
+        font-size: 1.2rem;
+    }
+    mat-card-title {
+        font-size: 1.3rem;
+    }
+    .info-card h2 {
+        font-size: 2rem;
+    }
+    .loading {
+        font-size: 1.3rem;
+    }
+    ul li {
+        font-size: 14px;
+    }
+}

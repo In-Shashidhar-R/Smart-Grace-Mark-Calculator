@@ -1,0 +1,170 @@
+/* General Styles */
+
+.course-selection,
+.marks-list {
+    margin-bottom: 20px;
+}
+
+mat-card {
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+mat-card:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Course Selection Styles */
+
+.course-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.course-selection h2 {
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+select {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+select:focus {
+    border-color: #00796b;
+    outline: none;
+}
+
+.action-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: #00796b;
+    color: white;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    align-self: center;
+}
+
+.action-button:hover {
+    background-color: #004d40;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.action-button:active {
+    background-color: #00332e;
+    transform: translateY(0);
+}
+
+.action-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+
+/* Grace Marks Styles */
+
+.grace-marks mat-card {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #f0f8ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.grace-marks h3 {
+    font-size: 20px;
+    color: #00796b;
+    text-align: center;
+}
+
+
+/* Marks List Styles */
+
+.marks-list mat-card {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+}
+
+.marks-table-container {
+    margin-top: 15px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+th.mat-header-cell {
+    background-color: #00796b;
+    color: white;
+}
+
+
+/* Adjust alignment of the credits column */
+
+th.mat-header-cell.mat-column-credits,
+td.mat-cell.mat-column-credits {
+    text-align: center;
+    /* Ensures credit column is aligned properly */
+}
+
+td.mat-cell {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+tr:hover td {
+    background-color: #f1f1f1;
+}
+
+
+/* Responsive Styles */
+
+@media screen and (max-width: 600px) {
+    .course-selection,
+    .marks-list {
+        padding: 15px;
+    }
+    select,
+    .action-button {
+        width: 100%;
+        font-size: 14px;
+    }
+    mat-card {
+        padding: 15px;
+    }
+    table {
+        font-size: 12px;
+    }
+}

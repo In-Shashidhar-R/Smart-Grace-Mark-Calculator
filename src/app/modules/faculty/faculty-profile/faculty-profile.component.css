@@ -1,0 +1,268 @@
+/* Overall Faculty Profile container */
+
+.faculty-profile {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Profile card container */
+
+.profile-card {
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+
+/* Profile card hover effect */
+
+.profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Header styling */
+
+.mat-card-header {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Title and subtitle of the header */
+
+.mat-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.mat-card-subtitle {
+    font-size: 18px;
+    color: #007bff;
+    font-style: italic;
+    margin-top: 8px;
+}
+
+
+/* Form and general inputs */
+
+.form-group {
+    margin-bottom: 24px;
+    font-size: 16px;
+}
+
+.form-group label {
+    font-weight: bold;
+    font-size: 17px;
+    color: #333;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 6px;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+
+/* Buttons and actions */
+
+.form-actions {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-2px);
+}
+
+.btn-edit {
+    background-color: #28a745;
+    color: white;
+    padding: 14px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-edit:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+
+/* Display information when not editing */
+
+p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Edit mode button */
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Animation for smooth form visibility */
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Apply fade-in animation to the content */
+
+.mat-card-content {
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+
+/* Form appearance */
+
+.mat-card-content form {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+
+/* Styling for paragraphs within content */
+
+p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+
+/* Spacing for individual profile information */
+
+.faculty-profile p {
+    margin-bottom: 16px;
+    font-size: 16px;
+    color: #555;
+}
+
+.faculty-profile p strong {
+    font-weight: bold;
+    color: #333;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .faculty-profile {
+        max-width: 100%;
+        padding: 15px;
+    }
+    .profile-card {
+        padding: 20px;
+    }
+    .mat-card-header {
+        padding: 15px;
+    }
+    .mat-card-title {
+        font-size: 22px;
+    }
+    .mat-card-subtitle {
+        font-size: 16px;
+    }
+    .form-group input,
+    .form-group textarea {
+        font-size: 14px;
+    }
+    .btn {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+    .btn-primary {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+    .btn-edit {
+        font-size: 14px;
+        padding: 12px 24px;
+    }
+}

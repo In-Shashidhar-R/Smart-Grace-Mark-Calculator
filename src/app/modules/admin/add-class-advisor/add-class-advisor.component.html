@@ -1,0 +1,90 @@
+<mat-card class="form-container">
+    <p><strong>Add Class Advisor Details</strong></p>
+    <form class="grid-container">
+
+        <mat-form-field class="full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput [(ngModel)]="classadvisor.firstName" name="firstName" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput [(ngModel)]="classadvisor.lastName" name="lastName" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Phone Number</mat-label>
+            <input matInput type="tel" [(ngModel)]="classadvisor.phoneNumber" name="phoneNumber" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Email</mat-label>
+            <input matInput type="email" [(ngModel)]="classadvisor.email" name="email" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Gender</mat-label>
+            <mat-select [(ngModel)]="classadvisor.gender" name="gender" required>
+                <mat-option value="male">Male</mat-option>
+                <mat-option value="female">Female</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput type="date" [(ngModel)]="classadvisor.dob" name="dob" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Address</mat-label>
+            <input matInput [(ngModel)]="classadvisor.address" name="address" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Major Subject</mat-label>
+            <input matInput [(ngModel)]="classadvisor.majorsubject" name="majorsubject" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Highest Degree</mat-label>
+            <input matInput [(ngModel)]="classadvisor.degree" name="degree" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Class Advisor of Branch</mat-label>
+            <mat-select [(ngModel)]="classadvisor.branch" name="branch" required>
+                <mat-option value="AIE">AIE</mat-option>
+                <mat-option value="CSE - A">CSE - A</mat-option>
+                <mat-option value="CSE - B">CSE - B</mat-option>
+                <mat-option value="CYS">CYS</mat-option>
+                <mat-option value="CCE">CCE</mat-option>
+                <mat-option value="ECE">ECE</mat-option>
+                <mat-option value="MECH">MECH</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Class advisor for Batch</mat-label>
+            <mat-select [(ngModel)]="classadvisor.batch" name="batch" required>
+                <mat-option value="2020-2024">2020 - 2024</mat-option>
+                <mat-option value="2021-2025">2021 - 2025</mat-option>
+                <mat-option value="2022-2026">2022 - 2026</mat-option>
+                <mat-option value="2023-2027">2023 - 2027</mat-option>
+                <mat-option value="2024-2028">2024 - 2028</mat-option>
+                <mat-option value="2025-2029">2025 - 2029</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="classadvisor.username" name="username" required>
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" [(ngModel)]="classadvisor.password" name="password" required>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" class="full-width submit-button" (click)="addclassadvisor()">Submit</button>
+</mat-card>

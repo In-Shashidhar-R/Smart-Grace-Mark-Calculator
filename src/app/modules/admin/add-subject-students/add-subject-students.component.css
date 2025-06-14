@@ -1,0 +1,136 @@
+/* Styling for the form container */
+
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+}
+
+
+/* Hover effect for the form container */
+
+.form-container:hover {
+    transform: scale(1.02);
+    /* Slightly increase the size when hovering */
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    /* Enhance the shadow */
+}
+
+
+/* Heading styling */
+
+h2 {
+    color: #4CAF50;
+    /* Green color */
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Styling for the form */
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Styling for label */
+
+label {
+    text-align: left;
+    font-weight: 600;
+    margin-top: 10px;
+    color: #333;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+/* Styling for input fields */
+
+input {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    margin-top: 8px;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+
+/* Focus effect for input fields */
+
+input:focus {
+    border-color: #4CAF50;
+    /* Green border on focus */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    /* Light green glow */
+}
+
+
+/* Styling for the Save button */
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s ease-out, transform 0.3s ease-out;
+}
+
+
+/* Button hover effect */
+
+button:hover {
+    background-color: #45a049;
+    /* Slightly darker green on hover */
+    transform: scale(1.05);
+    /* Slightly increase button size on hover */
+}
+
+
+/* Disabled button style */
+
+button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+
+/* Input focus animation */
+
+input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+
+/* Responsive design for smaller screens */
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        margin: 20px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    input,
+    button {
+        font-size: 14px;
+    }
+}

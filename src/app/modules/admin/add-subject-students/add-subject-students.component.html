@@ -1,0 +1,18 @@
+<div class="form-container">
+    <h2>Add Subject for Students</h2>
+    <form [formGroup]="subjectForm" (ngSubmit)="onSubmit()">
+        <label for="batch">Batch:</label>
+        <input id="batch" formControlName="batch" type="text" placeholder="Enter batch" required />
+
+        <label for="courseName">Course Name:</label>
+        <input id="courseName" formControlName="courseName" type="text" placeholder="Enter course name" required />
+
+        <label for="credits">Credits:</label>
+        <input id="credits" formControlName="credits" type="number" placeholder="Enter credits" required min="1" />
+
+        <label for="department">Department:</label>
+        <input id="department" formControlName="department" type="text" placeholder="Enter department" required />
+
+        <button type="submit" [disabled]="subjectForm.invalid">Save Subject</button>
+    </form>
+</div>

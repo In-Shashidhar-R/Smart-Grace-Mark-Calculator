@@ -1,0 +1,138 @@
+/* Container styling */
+
+.form-container {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease-in-out;
+}
+
+.form-container p {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-container:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Grid layout for form fields */
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+
+/* Styling for form fields */
+
+mat-form-field {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+
+/* Input field hover effect */
+
+mat-form-field:hover {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Focused input field */
+
+mat-form-field.mat-focused .mat-input-element {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Custom styling for mat-select */
+
+mat-select {
+    transition: background-color 0.3s ease-in-out;
+}
+
+
+/* Button styling */
+
+.submit-button {
+    background: linear-gradient(45deg, #4CAF50, #388E3C);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+    width: 100%;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+
+/* Button hover effect */
+
+.submit-button:hover {
+    background: linear-gradient(45deg, #45a049, #2E7D32);
+    transform: scale(1.05);
+}
+
+
+/* Button click animation */
+
+.submit-button:active {
+    transform: scale(0.98);
+}
+
+
+/* Styling for labels */
+
+mat-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+
+/* Add transitions for labels when the input is focused */
+
+mat-form-field.mat-focused mat-label {
+    color: #4CAF50;
+}
+
+
+/* Animation for form elements */
+
+mat-form-field .mat-input-element {
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+mat-form-field .mat-select-trigger {
+    transition: background-color 0.3s ease-out;
+}
+
+
+/* Media queries for responsiveness */
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+    .submit-button {
+        width: 100%;
+    }
+    .form-container {
+        padding: 30px;
+    }
+}

@@ -1,0 +1,155 @@
+<div class="progress-container">
+    <h2>Achievements Progress</h2>
+
+    <table mat-table [dataSource]="achievements" class="mat-elevation-z8">
+        <!-- Column Definitions -->
+
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>ID</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.id }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="type">
+            <th mat-header-cell *matHeaderCellDef>Type</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.type }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="title">
+            <th mat-header-cell *matHeaderCellDef>Title</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.title }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef>Description</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.description }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="organization">
+            <th mat-header-cell *matHeaderCellDef>Organization</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.organization }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef>Position</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.position }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="eventDate">
+            <th mat-header-cell *matHeaderCellDef>Event Date</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.eventDate | date:'dd/MM/yyyy' }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="sharepoint">
+            <th mat-header-cell *matHeaderCellDef> SharePoint </th>
+            <td mat-cell *matCellDef="let achievement">
+                <a *ngIf="achievement.sharepoint" [href]="achievement.sharepoint" target="_blank" rel="noopener noreferrer">
+                Open Link
+              </a>
+            </td>
+        </ng-container>
+
+
+        <ng-container matColumnDef="appliedDate">
+            <th mat-header-cell *matHeaderCellDef>Applied Date</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.appliedDate | date:'dd/MM/yyyy' }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="participants">
+            <th mat-header-cell *matHeaderCellDef>Number of Participants</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.participants }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.status }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="feedback">
+            <th mat-header-cell *matHeaderCellDef>Feedback</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.feedback }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="grace_marks">
+            <th mat-header-cell *matHeaderCellDef>Grace Marks Awarded</th>
+            <td mat-cell *matCellDef="let achievement">{{ achievement.grace_marks_awarded }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="edit">
+            <th mat-header-cell *matHeaderCellDef>Actions</th>
+            <td mat-cell *matCellDef="let achievement">
+                <button mat-button (click)="editAchievement(achievement)" [disabled]="achievement.status === 'approved' || achievement.status === 'rejected'">
+                    Edit
+                </button>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <br>
+    <button mat-button color="primary" (click)="downloadPDF()" class="download-btn">
+        Download PDF
+    </button>
+
+
+    <!-- Edit Form -->
+    <div *ngIf="editingAchievement" class="edit-form">
+        <h3>Edit Achievement</h3>
+        <form [formGroup]="editForm" (ngSubmit)="saveChanges()">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Type of Achievement</mat-label>
+                <mat-select formControlName="type">
+                    <mat-option *ngFor="let type of achievementTypes" [value]="type">
+                        {{ type }}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput formControlName="title" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Organized By</mat-label>
+                <input matInput formControlName="organization" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Position</mat-label>
+                <mat-select formControlName="position">
+                    <mat-option value="first">First</mat-option>
+                    <mat-option value="second">Second</mat-option>
+                    <mat-option value="third">Third</mat-option>
+                    <mat-option value="participant">Participant</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Number of Participants / Team Members</mat-label>
+                <input matInput type="number" formControlName="participants" min="1" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Sharepoint Link</mat-label>
+                <input matInput formControlName="sharepoint" />
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Event Date</mat-label>
+                <input matInput type="date" formControlName="eventDate" required>
+            </mat-form-field>
+
+            <div class="actions">
+                <button mat-button type="submit" [disabled]="!editForm.valid">Save Changes</button>
+                <button mat-button type="button" (click)="cancelEdit()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

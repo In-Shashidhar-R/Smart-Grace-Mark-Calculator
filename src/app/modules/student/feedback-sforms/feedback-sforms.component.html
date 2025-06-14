@@ -1,0 +1,30 @@
+<div class="feedback-container">
+    <h2>Provide Feedback</h2>
+
+    <form [formGroup]="feedbackForm" (ngSubmit)="submitFeedback()">
+
+        <!-- Responsiveness Rating -->
+        <div class="rating-container">
+            <label>How was the responsiveness of the software?</label>
+            <input matInput formControlName="responsivenessRating" type="number" min="1" max="5" step="1" placeholder="Enter responsiveness rating (1-5)" />
+        </div>
+
+        <!-- System Interface Rating -->
+        <div class="rating-container">
+            <label>How was the system interface?</label>
+            <input matInput formControlName="interfaceRating" type="number" min="1" max="5" step="1" placeholder="Enter interface rating (1-5)" />
+        </div>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Share Your Thoughts</mat-label>
+            <textarea matInput formControlName="feedback" placeholder="Your feedback..." required></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit" [disabled]="feedbackForm.invalid">
+        Submit
+      </button>
+    </form>
+
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+</div>

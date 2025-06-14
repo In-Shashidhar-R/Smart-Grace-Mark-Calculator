@@ -1,0 +1,247 @@
+/* Profile Card Styles */
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4CAF50, #2E7D32);
+    /* Green Gradient */
+    color: white;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.profile-icon {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.profile-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.profile-card {
+    width: 90%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #ffffff;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.loading-card {
+    width: 300px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    background: #f1f1f1;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.mat-card-title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 15px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+/* Profile Details */
+
+.profile-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s ease-in-out;
+}
+
+.profile-row:hover {
+    background: #f9f9f9;
+}
+
+.profile-row div {
+    flex: 1;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.3s ease-in-out;
+}
+
+.profile-row input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.profile-row input:focus {
+    border-color: #00796b;
+    box-shadow: 0px 0px 5px rgba(0, 121, 107, 0.5);
+}
+
+.profile-row input:read-only {
+    background: #f5f5f5;
+    border: none;
+    color: #333;
+}
+
+
+/* Buttons */
+
+.cancel-btn,
+.edit-btn,
+.save-btn {
+    padding: 12px 22px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-align: center;
+}
+
+.edit-btn {
+    background-color: #00796b;
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #004d40;
+    transform: scale(1.1);
+}
+
+.cancel-btn,
+.save-btn {
+    background-color: #4caf50;
+    color: white;
+    margin-top: 20px;
+}
+
+.cancel-btn:hover,
+.save-btn:hover {
+    background-color: #388e3c;
+    transform: scale(1.1);
+}
+
+.cancel-btn:active,
+.edit-btn:active,
+.save-btn:active {
+    transform: scale(0.95);
+}
+
+
+/* Centering Edit Button below the form */
+
+.profile-card .mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-btn {
+    margin-top: 15px;
+}
+
+
+/* Subtle animations for input fields */
+
+@keyframes slideIn {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.profile-row {
+    animation: slideIn 0.4s ease-in-out;
+}
+
+
+/* Responsiveness */
+
+@media screen and (max-width: 768px) {
+    .profile-card {
+        width: 95%;
+        padding: 15px;
+    }
+    .profile-row {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 8px;
+    }
+    .profile-row div {
+        font-size: 14px;
+    }
+    .profile-row input {
+        font-size: 14px;
+    }
+    .cancel-btn,
+    .edit-btn,
+    .save-btn {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .profile-card {
+        width: 100%;
+        padding: 10px;
+    }
+    .profile-row {
+        padding: 6px;
+    }
+    .profile-row div {
+        font-size: 13px;
+    }
+    .profile-row input {
+        font-size: 13px;
+        padding: 6px;
+    }
+    .cancel-btn,
+    .edit-btn,
+    .save-btn {
+        font-size: 12px;
+        padding: 8px 14px;
+    }
+}

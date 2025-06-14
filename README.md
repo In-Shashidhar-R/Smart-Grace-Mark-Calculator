@@ -1,59 +1,52 @@
-# SmartGraceMarkCalculator
+# 🧠 \textbf{Smart Grace Marks Management System}
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+This project is a comprehensive web application designed to \textbf{automate the allocation of grace marks} based on student achievements. The system ensures \textbf{fairness, transparency, and efficiency} by streamlining the entire process — from submission to validation and final approval.
 
-## Development server
+## 🔧 \textbf{Key Features}
 
-To start a local development server, run:
+- ✅ \textbf{Automated Grace Mark Calculation}  
+  Automatically calculates grace marks using a rule-based system aligned with institutional policies and eligibility criteria.
 
-```bash
-ng serve
-```
+- 📝 \textbf{Student Achievement Submission}  
+  Students can submit their co-curricular and extra-curricular achievements along with necessary proof and details.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- 👨‍🏫 \textbf{Faculty Validation Module}  
+  Faculty members and class advisors can review, validate, or reject submitted achievements before they proceed for approval.
 
-## Code scaffolding
+- ⚙️ \textbf{Admin Dashboard}  
+  Admins have access to an overview of student submissions, status tracking, rules configuration, and overall mark distribution analytics.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- 🔐 \textbf{Role-Based Access Control}  
+  The system supports three main user roles:
+  - \textbf{Student}: Submit achievements and view status  
+  - \textbf{Faculty/Class Advisor}: Validate and comment on submissions  
+  - \textbf{Admin}: Configure rules, approve final marks, and generate reports
 
-```bash
-ng generate component component-name
-```
+- 📊 \textbf{Dynamic Report Generation}  
+  View and export individual and consolidated grace mark summaries for academic analysis or official records.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- 💻 \textbf{Responsive \& User-Friendly UI}  
+  Built with a clean interface to ensure smooth navigation and usability across devices.
 
-```bash
-ng generate --help
-```
+## 🛠️ \textbf{Tech Stack}
 
-## Building
+- \textbf{Frontend}: Angular / HTML / CSS  
+- \textbf{Backend}: Node.js, Express.js  
+- \textbf{Database}: MySQL  
+- \textbf{Authentication}: JWT (JSON Web Tokens)  
+- \textbf{Security}: bcrypt for password hashing  
+- \textbf{Utilities}: Moment.js for date handling, CORS, RESTful APIs
 
-To build the project run:
+## 🚀 \textbf{How It Works}
 
-```bash
-ng build
-```
+1. Students register and submit achievements.
+2. Submissions go to the faculty for validation.
+3. Once validated, achievements are auto-evaluated by the system based on pre-set rules.
+4. Admins review and approve final mark allocations.
+5. Students can view their mark status and final score in their dashboard.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📈 \textbf{Outcomes}
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Reduced manual errors and bias in grace mark distribution.  
+- Time-efficient validation and approval process.  
+- Scalable structure to accommodate multiple departments and institutions.
